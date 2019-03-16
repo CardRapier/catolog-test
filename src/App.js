@@ -12,10 +12,9 @@ class App extends Component {
         this.state = {
             app: <Game />
         }
-        this.handleAppChange = this.handleAppChange.bind(this)
     }
 
-    handleAppChange(event) {
+    handleAppChange = (event) => {
         const {name} = event.target
         if(name === 'Meme') {this.setState({app: <MemeGenerator /> })}
         else if(name === 'Todo') {this.setState({app: <Todo /> })}
