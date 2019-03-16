@@ -2,13 +2,11 @@ import React, {Component} from 'react'
 import Square from './Square'
 
 class Board extends Component {
-    constructor() {
-      super();
-      this.state = {
-        squares: Array(9).fill(null),
-        xIsNext: true,
-      };
-    }
+    state = {
+      squares: Array(9).fill(null),
+      xIsNext: true,
+    };
+
     renderSquare(i) {
       return <Square 
       value={this.state.squares[i]} 
@@ -16,7 +14,7 @@ class Board extends Component {
       />;
     }
   
-    handleClick(i) {
+    handleClick = (i) => {
       const squares = this.state.squares.slice();
       squares[i] = this.state.xIsNext ? 'X' : 'O';
       this.setState({

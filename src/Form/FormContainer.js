@@ -2,19 +2,15 @@ import React, {Component} from 'react'
 import FormComponent from './FormComponent';
 
 class FormContainer extends Component {
-    constructor() {
-        super()
-        this.state = {
-            firstName: "",
-            lastName: "",
-            isFriendly: false,
-            gender: "",
-            favColor: ""
-        }
-        this.handleChange = this.handleChange.bind(this)
+    state = {
+        firstName: "",
+        lastName: "",
+        isFriendly: false,
+        gender: "",
+        favColor: ""
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         const {name, value, type, checked} = event.target
         type === 'checkbox' ? this.setState({ [name]: checked }) : this.setState({ [name]: value })
     }

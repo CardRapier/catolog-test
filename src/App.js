@@ -7,11 +7,8 @@ import Api from './Api/AppAPI'
 import Form from './Form/AppForm'
 
 class App extends Component {
-    constructor() {
-        super()
-        this.state = {
-            app: <Game />
-        }
+    state = {
+        app: <Game />
     }
 
     handleAppChange = (event) => {

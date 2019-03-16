@@ -4,11 +4,8 @@ import allApps from './apps'
 import './Navigation.css'
 
 class Navigation extends Component {
-    constructor() {
-        super()
-        this.state = {
-            apps: allApps
-        }
+    state = {
+        apps: allApps
     }
 
     render() {

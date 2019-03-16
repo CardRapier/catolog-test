@@ -1,12 +1,9 @@
 import React, {Component} from 'react'
 
 class AppAPI extends Component {
-    constructor() {
-        super()
-        this.state = {
-            loading: false,
-            character: {}
-        }
+    state = {
+        loading: false,
+        character: {}
     }
 
     componentDidMount() {
