@@ -17,5 +17,5 @@ class Game extends Component {
     );
   }
 }
-
+//Jaja xd
 export default Game
