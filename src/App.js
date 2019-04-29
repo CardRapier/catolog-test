@@ -1,31 +1,28 @@
 import React, {Component} from 'react'
-import Game from './Game/Game'
-import MemeGenerator from './MemeGenerator/AppGenerator'
-import Todo from './TodoItem/AppTodoItem'
 import Navigation from './Navigation'
+import Game from './Game/Game'
+import Meme from './MemeGenerator/AppGenerator'
+import Todo from './TodoItem/AppTodoItem'
 import Api from './Api/AppAPI'
 import Form from './Form/AppForm'
+import Error from './Error'
+import { BrowserRouter, Route, Switch } from 'react-router-dom' 
 
 class App extends Component {
-    state = {
-        app: <Game />
-    }
-
-    handleAppChange = (event) => {
-        const {name} = event.target
-        if(name === 'Meme') {this.setState({app: <MemeGenerator /> })}
-        else if(name === 'Todo') {this.setState({app: <Todo /> })}
-        else if(name === 'Api') {this.setState({app: <Api /> })}
-        else if(name === 'Form') {this.setState({app: <Form /> })}
-        else {this.setState({app: <Game /> })}
-    }
 
     render() {
         return(
-            <div>
-                <Navigation handleAppChange={this.handleAppChange}/>
-                {this.state.app}
-            </div>
+            <BrowserRouter>
+                <Navigation/>   
+                <Switch>
+                    <Route path='/Game' component={Game} />
+                    <Route path='/Meme' component={Meme} />
+                    <Route path='/Todo' component={Todo} />
+                    <Route path='/Api' component={Api} />
+                    <Route path='/Form' component={Form} />
+                    <Route component={Error} />
+                </Switch>
+            </BrowserRouter>
         )
     }
 }

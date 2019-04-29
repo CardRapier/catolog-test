@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import Tab from './Tab'
 import allApps from './apps'
 import './Navigation.css'
+import { NavLink } from 'react-router-dom'
 
 class Navigation extends Component {
     state = {
@@ -10,7 +10,7 @@ class Navigation extends Component {
 
     render() {
         const tabs = this.state.apps.map(
-            tab => <Tab handleAppChange={this.props.handleAppChange} key={tab.key} name={tab.name} text={tab.text}/>
+            tab => <li> <NavLink key={tab.key} to={""+ tab.name}>{tab.text}</NavLink> </li> 
         )
 
         return (
